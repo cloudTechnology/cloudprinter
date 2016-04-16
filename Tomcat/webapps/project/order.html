@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>file.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+
+<style>
+
+td{
+  border:1px solid black;
+  height:100%;
+}
+
+.formDiv{
+position:relative;
+border:1px solid #CCCCCC;
+border-top:0;
+width:100%;
+padding-left:3%;
+padding-top:10px;
+font-size:20px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+	<form id="form" action = "" method = "post">
+  <div class="formDiv">
+    <table id="table" style="border:1px solid black;border-collapse:collapse;width:100%;position:relative;left:-15px;">
+      <tr>
+        <th style="border:1px solid black;width:40%;text-align:center;">名称</th>
+        <th style="border:1px solid black;width:10%;text-align:center;">单价</th>
+        <th style="border:1px solid black;width:10%;text-align:center;">数量</th>
+        <th style="border:1px solid black;width:10%;text-align:center;">小计</th>
+        <th style="border:1px solid black;width:15%;text-align:center;">状态</th>
+        <th style="border:1px solid black;width:15%;text-align:center;">操作</th>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+    </table>
+  </div>
+  <div style="text-align:right;position:relative;top:10px;right:10%">总计：<span id="total">0</span>元
+  </div>
+  </form>
+
+ </body>
+
+<script type="text/javascript" src="js/jquery-2.2.1.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/order.js"></script>
+  
+</html>
