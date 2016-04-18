@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>登录</title>
+
+<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+<meta http-equiv="description" content="this is my page">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+
+
+
+<style type="text/css">
+td{
+   width:50%;
+   height:30px;
+}
+.td-class{
+position:relative;
+text-align:right;
+right:10px;
+bottom:0px;
+}
+</style>
+
+</head>
+
+<body>
+	<div class="container"  style="width:100%;">
+        <div class="jumbotron" style="padding-top:5%;padding-bottom:20%;background-image:url('img/1413012235-43G.png');">
+	         <h1 style="text-align:center;color:blue">登录</h1>
+		        <form class="form-horizontal" action="" method="post" id="loginForm">
+    <table style="width:100%">
+                  <tr>
+      <td class="td-class">用户名：</td>
+      <td>
+         <input type="text" name="username" class="form-control" id="nameId" 
+            placeholder="请输入用户名" style="width:150px"/> 
+            </td> 
+            </tr> 
+            <tr>
+            <td>
+                </td>
+                 <td>
+                         <span style="color:red;" id="usernameError">&nbsp;</span> 
+                   </td>
+                </tr> 
+            <tr>  
+                <td class="td-class">密码：</td>
+                <td>
+                  <input type="password" name="password" class="form-control" id="wordId" 
+            placeholder="请输入密码" style="width:150px"/>
+            </td>
+            </tr>
+             <tr>
+            <td>
+             </td>
+                 <td>
+                       <span style="color:red" id="passwordError">&nbsp;</span>  
+                   </td>
+              </tr>
+            <tr>   
+        <td class="td-class">验证码：</td>
+        <td>     <input type="text" name="verifyCode" class="form-control" id="verify" 
+            placeholder="验证码" style="width:70px;float:left"/>
+            <img id="verifyImg" src="" width="80px" height="30px" style="position:relative;left:20px;top:3px"/>
+            <a href="javascript:change()" style="position:relative;bottom:-10px;left:25px;color:red">换一张</a><br/>    
+            </td> 
+            </tr> 
+             <tr>
+                  <td>
+                    </td>
+                  <td>
+                      <span style="color:red;" id="verifyError">&nbsp;</span> 
+                   </td>
+                  </tr>
+            <tr>
+               <td class="td-class"></td>
+               <td>
+                  <input type="checkbox" name="remember" id="rememberMe"> 记住我
+               </td>
+            </tr>
+            <tr>
+        <td class="td-class"></td>
+       <td>
+        <input type="button" id="loginButton" class="btn btn-default" value="登录"/>
+        <input id="registButton" type="button" class="btn btn-default" value="注册"/>
+      </td>
+      </tr>
+      <tr>
+        <td class="td-class"></td>
+         <td><input id="recoverButton" type="button" class="btn btn-link" value="忘记密码"/></td>
+      </tr>
+      </table>
+   </form>
+
+	    </div>
+    </div>
+</body>
+
+<script type="text/javascript" src="js/jquery-2.2.1.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/login.js"></script>
+
+</html>

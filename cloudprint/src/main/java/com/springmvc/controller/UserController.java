@@ -33,6 +33,13 @@ public class UserController {
 //        return "你好hello";  
 //       
 //    }  
+    
+	  @RequestMapping(value = "/test", produces = "text/plain;charset=UTF-8")  
+	  public @ResponseBody  
+	  String hello() {  
+	      return "send http success:hello, you send the message";  
+	     
+	  }  
   
 //    @RequestMapping(value = "/welcome", produces = "text/plain;charset=UTF-8")  
 //    public @ResponseBody  
