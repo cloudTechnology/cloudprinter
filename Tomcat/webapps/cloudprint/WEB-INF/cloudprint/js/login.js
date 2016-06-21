@@ -1,7 +1,5 @@
 window.onload=function(){
 
-  var xmlHttp=creatXmlHttp();
-
   //登陆按钮校验
 
 var login = document.getElementById("loginButton");
@@ -11,9 +9,24 @@ var login = document.getElementById("loginButton");
     var e2 = document.getElementById("passwordError").innerHTML;
     var e4 = document.getElementById("verifyError").innerHTML;
     if(e1 == "" && e2  == ""  && e4  == ""){
-      f.action="";
-      f.method="post";
-      f.submit();
+      var username=document.getElementById("nameId").value;
+      var password=document.getElementById("wordId").value;
+      var verifycode=document.getElementById("verify").value;
+      var remember=document.getElementById("rememberMe").checked;
+      var xmlHttp=createXmlHttp();
+      // xmlHttp.open("POST","/cloudprint/login",true);
+      xmlHttp.open("POST","/cloudprint",true);
+      xmlHttp.setRequestHeader("Content-Type","applicotiaon/x-www-form-urlencoded");
+      xmlHttp.send("username="+username+"&password="+password+"&verifycode="+verifycode+"&remember="+remember);
+      xmlHttp.onreadystatechange=function(){
+        if(xmlHttp.readyState==4&&xmlHttp.status==200){
+          // var text=xmlHttp.responseText;
+          var text="用户名或密码错误";
+          if(!(text == null || text.trim() == "")){
+            alert(text);
+          }
+        }
+      };
     }else{
       alert("登陆信息填写有误！");
     }
@@ -24,14 +37,6 @@ var login = document.getElementById("loginButton");
   document.getElementById("registButton").onclick=function(){
 		var formId = document.getElementById("loginForm");
 		formId.action = "regist.html";
-		formId.submit();
-	};
-
-//忘记密码事件
-
-		document.getElementById("recoverButton").onclick=function(){
-		var formId = document.getElementById("loginForm");
-		formId.action = "recovery.html";
 		formId.submit();
 	};
 
@@ -80,7 +85,7 @@ var login = document.getElementById("loginButton");
 
 //创建XMLHttpRequest
 
-function creatXmlHttp(){
+function createXmlHttp(){
   try{
     return new XMLHttpRequest();
   }catch(e){
@@ -101,5 +106,5 @@ function creatXmlHttp(){
 
 function change(){
   var ci=document.getElementById("verifyImg");
-  ci.src="?xjenfcdh=" + new Date().getTime();
+  ci.src="?xxx=" + new Date().getTime();
 }

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>file.html</title>
+    <title>order.html</title>
 	
     <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
     <meta http-equiv="description" content="this is my page">
@@ -33,30 +33,52 @@ font-size:20px;
 
 <body>
 
-	<form id="form" action = "" method = "post">
-  <div class="formDiv">
-    <table id="table" style="border:1px solid black;border-collapse:collapse;width:100%;position:relative;left:-15px;">
+	
+  <div class="formDiv" id="div1">
+    <table id="table" style="border:1px solid black;border-collapse:collapse;width:100%;position:relative;left:-15px;style=;text-align:center;">
       <tr>
-        <th style="border:1px solid black;width:40%;text-align:center;">名称</th>
+        <td style="color:red;text-align:left" colspan="5">未付款订单：</td>
+      </tr>
+      <tr id="o-tr">
+        <th style="border:1px solid black;width:45%;text-align:center;">名称</th>
         <th style="border:1px solid black;width:10%;text-align:center;">单价</th>
         <th style="border:1px solid black;width:10%;text-align:center;">数量</th>
         <th style="border:1px solid black;width:10%;text-align:center;">小计</th>
-        <th style="border:1px solid black;width:15%;text-align:center;">状态</th>
-        <th style="border:1px solid black;width:15%;text-align:center;">操作</th>
+        <th style="border:1px solid black;width:20%;text-align:center;">日期</th>
       </tr>
       <tr>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td style="height:30px;background-color:#cccccc" colspan="5"></td>
       </tr>
+      <tr>
+        <td style="color:red;text-align:left" colspan="5">已付款订单：</td>
+      </tr>
+      <tr id="a-tr">
+        <th style="border:1px solid black;width:45%;text-align:center;">名称</th>
+        <th style="border:1px solid black;width:10%;text-align:center;">单价</th>
+        <th style="border:1px solid black;width:10%;text-align:center;">数量</th>
+        <th style="border:1px solid black;width:10%;text-align:center;">小计</th>
+        <th style="border:1px solid black;width:20%;text-align:center;">日期</th>
+      </tr>
+      <tr>
+        <td style="height:30px;background-color:#cccccc" colspan="5"></td>
+      </tr>
+      <tr>
+        <td style="color:red;text-align:left" colspan="5">已完成订单：</td>
+      </tr>
+      <tr id="c-tr">
+        <th style="border:1px solid black;width:45%;text-align:center;">名称</th>
+        <th style="border:1px solid black;width:10%;text-align:center;">单价</th>
+        <th style="border:1px solid black;width:10%;text-align:center;">数量</th>
+        <th style="border:1px solid black;width:10%;text-align:center;">小计</th>
+        <th style="border:1px solid black;width:20%;text-align:center;">日期</th>
+      </tr>
+
     </table>
   </div>
-  <div style="text-align:right;position:relative;top:10px;right:10%">总计：<span id="total">0</span>元
+  <div style="text-align:right;position:relative;top:10px;right:5%">总计：<span id="total">0</span>元
+    <button id="cancel" class="btn btn-default" style="margin:0px 5px;">取消订单</button><a href="pay.html" target="_blank" id="pay" class="btn btn-default">去付款</a>
   </div>
-  </form>
+ 
 
  </body>
 
