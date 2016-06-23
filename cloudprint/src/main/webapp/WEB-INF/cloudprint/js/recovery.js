@@ -10,9 +10,26 @@ var recovery = document.getElementById("recoveryButton");
     var e3 = document.getElementById("twoError").innerHTML;
     var e4 = document.getElementById("verifyError").innerHTML;
     if(e1 == "" && e2  == ""  && e3  == ""  && e4  == ""){
-      f.action="";
-      f.method="post";
-      f.submit();
+      var username=document.getElementById("nameId").value;
+      var onePassword=document.getElementById("oneId").value;
+      var twoPassword=document.getElementById("twoId").value;
+      var verifycode=document.getElementById("verify").value;
+      var xmlHttp=createXmlHttp();
+      // xmlHttp.open("POST","/cloudprint/recovery",true);
+      xmlHttp.open("POST","/cloudprint",true);
+      xmlHttp.setRequestHeader("Content-Type","applicotiaon/x-www-form-urlencoded");
+      xmlHttp.send("username="+username+"&onePassword="+onePassword+"&twoPassword"+twoPassword+"&verifycode="+verifycode);
+      xmlHttp.onreadystatechange=function(){
+        if(xmlHttp.readyState==4&&xmlHttp.status==200){
+          // var text=xmlHttp.responseText;
+          var text="该用户不存在！";
+          if(!(text == null || text.trim() == "")){
+            alert(text);
+          }else{
+            alert("修改成功！");
+          }
+        }
+      };
     }else{
       alert("信息填写有误！");
     }
@@ -33,6 +50,23 @@ var recovery = document.getElementById("recoveryButton");
       clearInterval(js);
     }
    },1000);
+      var username=document.getElementById("nameId").value;
+      var xmlHttp = createXmlHttp();
+      // xmlHttp.open("POST","/cloudprint/getVerify",true);
+      xmlHttp.open("POST","/cloudprint",true);
+      xmlHttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+      xmlHttp.send("username="+username);
+      xmlHttp.onreadystatechange=function(){
+        if(xmlHttp.readyState == 4 && xmlHttp.status == 200){
+          // var text = xmlHttp.responseText;
+          var text = "该用户不存在！";
+          if(text == null || text.trim() == ""){
+            alert("验证码发送成功请注意查收！");
+          }else{
+            alert(text);
+          }
+        }
+      };
    };
 
    //用户名校验
@@ -97,7 +131,7 @@ var recovery = document.getElementById("recoveryButton");
 
 };
 
-function creatXmlHttp(){
+function createXmlHttp(){
   try{
     return new XMLHttpRequest();
   }catch(e){

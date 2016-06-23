@@ -29,7 +29,8 @@ width:350px;
 <div  class="container" style="width:100%;">
     <div class="jumbotron" style="min-width:1000px;">
       <div style="height:50px;">
-  <h4 style="position:relative;top:-40px;right:50px;text-align:right;">你好！username&nbsp;&nbsp;&nbsp;&nbsp;<a href="login.html">退出</a></h4>
+  <h4 style="position:relative;top:-40px;right:50px;text-align:right;"><span id="uname"></span>&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="login.html">退出</a></h4>
   <h2 style="position:relative;top:-40px;left:5%;text-align:left;">个人中心</h2>
   </div>
   <div style="border:1px solid #CCCCCC;width:100%;height:60px;">    
@@ -41,15 +42,15 @@ width:350px;
       <a href="school.html" style="text-decoration:none;color:black">修改学校</a></span>
     <span  style="text-align:right;position:relative;right:3%;top:-13px;">
       <form id="form1" action="" method="post">
-      搜索：<input type="text" name="sea" id="search"/>
-      <input type="submit" id="seaButton" value="搜索"/>
+      搜索：<input type="search" name="sea" id="search"/>
+      <input type="button" id="seaButton" value="搜索"/>
     </form>
     </span>
   </div>
   <iframe id="iframe" src="hello.html" height="350px" width="1000px" ></iframe>
   <div style="padding-left:5%;height:20px;position:relative;top:20px;">
   <form id="form2" action = "" method = "post" enctype="multipart/form-data">
-  上传文件：<input type="file" class="up-Input" name="uplFile" id="upload"/>
+  上传文件：<input type="file" class="up-Input" name="upFile" id="upload"/>
       <input type="submit" id="up-Button" value="上传" style="position:relative;left:435px;top:-47px;"/>
   </form>
 </div>
